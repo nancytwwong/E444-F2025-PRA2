@@ -1,3 +1,9 @@
+Name: Nancy Wong
+
+This is a clone of https://github.com/miguelgrinberg/flasky
+
+
+
 Flasky
 ======
 
