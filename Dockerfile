@@ -1,21 +1,21 @@
-FROM python:3.6-alpine
+# Use a lightweight Python base image
+FROM python:3.10-slim
 
-ENV FLASK_APP flasky.py
-ENV FLASK_CONFIG production
+# Set working directory inside the container
+WORKDIR /app
 
-RUN adduser -D flasky
-USER flasky
+# Copy requirements and install Python dependencies
+COPY requirements.txt requirements.txt
+RUN apt-get update
+RUN apt-get -y install gcc
+RUN pip install -r requirements.txt
 
-WORKDIR /home/flasky
+# Copy the entire application code
+COPY . .
 
-COPY requirements requirements
-RUN python -m venv venv
-RUN venv/bin/pip install -r requirements/docker.txt
+# set environement variable for Flask CLI
+ENV FLASK_APP=hello.py
 
-COPY app app
-COPY migrations migrations
-COPY flasky.py config.py boot.sh ./
+# Ruen flask application on all network interfaces
+CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
 
-# run-time configuration
-EXPOSE 5000
-ENTRYPOINT ["./boot.sh"]
