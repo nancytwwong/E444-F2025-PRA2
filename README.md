@@ -14,9 +14,6 @@ Activity 1.2 Example 2-2:
 Activity 1.3:  
 ![Activity 1.3](img/Activity_1.3.png)  
 
-Activity 1.4:  
-![Activity 1.4](img/Activity1_Screenshot1.png)  
-
 Activity_1.4_part1:  
 ![Activity_1.4_part1](img/Activity_1.4_part1.png)  
 
