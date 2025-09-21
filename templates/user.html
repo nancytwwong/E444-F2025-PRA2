@@ -1,3 +1,5 @@
+<!--Example 3-5 template that uses Flask-Bootstrap:-->
+<!--
 {% extends "bootstrap/base.html" %}
 
 {% block title %}Flasky{% endblock %}
@@ -24,6 +26,8 @@
 </div>
 {% endblock %}
 
+
+
 {% block content %}
 <div class="container">
     <div class="page-header">
@@ -31,3 +35,16 @@
     </div>
 </div>
 {% endblock %}
+
+-->
+
+<!--Example 3-9 simplified page template using template inheritance:-->
+{% extends "base.html" %}
+
+{% block title %}Flasky{% endblock %
+}
+{% block page_content %}
+<div class="page-header">
+    <h1>Hello, {{ name }}!</h1>
+</div>
+{% endblock %}
